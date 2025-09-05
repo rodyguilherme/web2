@@ -1,2 +1,4 @@
 # web2
-AULAS IFSP CJO
+
+Correção: a pasta Datas é o somente o exercício 2 e a pasta Pessoas é o exercício 1.
+
