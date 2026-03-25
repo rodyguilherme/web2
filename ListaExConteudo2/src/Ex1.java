@@ -1,3 +1,5 @@
+//import java.util.Scanner;
+
 import javax.swing.JOptionPane;
 
 public class Ex1 {
@@ -18,7 +20,7 @@ public class Ex1 {
 //		
 //		System.out.println("A quantidade de ração que sobrou é: " + quantidadeFinalRacao);
 //		teclado.close();	
-//		
+		
 		float pesoSacoRacao, quantidadeDiariaRacao, quantidadeFinalRacao;
 		
 		pesoSacoRacao = Float.parseFloat(JOptionPane.showInputDialog("Informe quantos quilos tem o saco de ração: "));
@@ -28,6 +30,6 @@ public class Ex1 {
 		
 		JOptionPane.showMessageDialog(null, "A quantidade de ração que sobrou é: " + quantidadeFinalRacao);
 		
-	}
+	} 
 
 }
