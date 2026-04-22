@@ -13,6 +13,11 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
 
 @Entity
 @Table(name = "user")
@@ -21,12 +26,21 @@ public class User {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotBlank
+	@NotEmpty
+	@Size(min = 3, max = 50)
 	private String name;
+	@NotEmpty
+	@Email
+	@Size(max = 50)
 	private String email;
+	@NotEmpty
 	private String password;
+	@NotNull
 	@Column(name = "birth_date")
 	@JsonFormat(pattern = "dd/MM/yyyy")
 	private LocalDate birthDate;
+	@NotNull
 	@Enumerated(EnumType.STRING)
 	private Gender gender;
 	private Boolean active;
