@@ -3,12 +3,37 @@ package br.edu.ifspcjo.ads.web2.ListaTarefas.domain.model;
 
 import java.util.Objects;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Size;
+
+@Entity
+@Table(name = "user")
 public class User {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	@Size(min = 3, max = 50)
 	private String name;
+	@NotNull
+	@NotBlank
+	@NotEmpty
+	@Email	
 	private String email;
+	@NotNull
 	private String password;
+	@NotNull
 	private Boolean active;
 	
 	public Long getId() {
@@ -64,8 +89,8 @@ public class User {
 		return Objects.equals(id, other.id);
 	}
 
-	public void setActive(boolean b) {
-		// TODO Auto-generated method stub
+	public void setActive(Boolean active) {
+		this.active = active;
 		
 	}
 
